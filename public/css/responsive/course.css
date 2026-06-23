@@ -1,0 +1,77 @@
+@media only screen and (max-width: 600px) {
+    /* Estilos específicos para dispositivos móviles */
+    .header-home-fondo {
+        background-size: contain !important;
+        height: 36.6vh !important;
+    }
+
+
+    #curso-elegir {
+        background-color: var(--azul);
+        padding: 15px !important;
+    }
+
+    #curso-elegir .curso-elegir-titulo {
+        font-size: 22px !important;
+    }
+
+
+
+    #curso-show {padding: 15px !important;}
+    #curso-show .container {padding-top: 65px !important;}
+    /*#curso-show img {
+       width: 200px !important;
+       height: 200px !important;
+    }*/
+
+    #curso-show .curso-show-titulo {
+       margin-top: 20px;
+       font-size: 15px;
+    }
+    
+    #curso-show .curso-show-subtitulo {
+       font-size: 14px;
+    }
+
+    #curso-show-columna-ocho #temario .temario-parrafo {
+       font-size: 12px; 
+    }
+
+
+    #curso-status .curso-status-title {
+        font-size: 14px !important;
+    }
+      
+
+    .header-course-fondo {
+        padding-top: 68.5px !important;
+        height: 25.2vh !important;
+    }
+
+
+    .header-list-fondo {
+        padding-top: 66px !important;
+        height: 21vh !important;
+    }
+
+    #header-list h3 {font-size: 30px !important;}
+    #header-list p {font-size: 17px !important;}
+
+
+
+    .header-pago-fondo {
+        padding-top: 84px !important;
+        height: 22vh !important;
+    }
+
+    #header-pago h3 {font-size: 20px !important;}
+    #header-pago p {font-size: 17px !important;}
+  
+
+
+    /*ESTILOS QWL SLIDER*/
+    #owl-demo .owl-parrafo{
+        font-size: 14px;
+    }
+
+}

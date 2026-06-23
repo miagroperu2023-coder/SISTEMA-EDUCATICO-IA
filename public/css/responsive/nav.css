@@ -1,0 +1,22 @@
+@media only screen and (max-width: 600px) {
+    /* Estilos específicos para dispositivos móviles */
+    .contenido-menu {
+        width: 75%;
+    }
+
+    #navegador{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #navegador .caja-img img{
+        width: 60px;
+        height: 55px;
+    } 
+
+    #navegador .navegador-flex p {
+        font-size: 24px;
+    }
+
+    #navegador .escoder-responsive { visibility: hidden;}
+}

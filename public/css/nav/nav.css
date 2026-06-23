@@ -1,0 +1,124 @@
+#navegador {
+    position: fixed;
+    z-index: 1000;  /*1000000*/
+    width: 100%;
+    -webkit-box-shadow: 0px 3px 16px 0px rgba(189,189,189,1);
+    -moz-box-shadow: 0px 3px 16px 0px rgba(189,189,189,1);
+    box-shadow: 0px 3px 16px 0px rgba(189,189,189,1);
+    background-color: var(--blanco);
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#navegador .navegador-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+#navegador .logo {
+    display: flex;
+    align-items: center;
+}
+
+#navegador .caja-img img {
+    width: 60px;
+    height: 60px;
+}
+
+#navegador  p {
+    color: var(--general);
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#navegador  svg {
+    cursor: pointer;
+}
+
+/*CAJA DEL INPUT*/
+#btn-menu {
+    display: none; /*desaparecer*/
+}
+
+/*CONTENEDOR DEL MENU Y TOMA TODO EL ALTO Y ANCHO*/
+.contenedor-menu {
+    position: fixed;
+    z-index: 2000000; /*ponerle mas altura para poder dar click a los enlaces*/
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    background-color: var(--generalTransparente);
+
+    /*DESAPARECEMOS EL CONTENEDOR MENU*/
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*PARECEMOS EL CONTENEDOR MENU*/
+#btn-menu:checked ~ .contenedor-menu {
+    /*lo APRECEMOS para la animacion del hover*/
+    opacity: 1;
+    visibility: visible;
+}
+
+/*CONTENIDO DEL MENU DONDE ESTAN LOS ENLACES*/
+.contenido-menu {
+    padding-top: 3.3rem; /*para alejarlo del la "X" para cerrar el emnu lateral*/
+    width: 25%;
+    height: 100vh;
+    background-color: var(--naranja);
+    transition: all 500ms ease;
+
+    /*position relative para acomodar el label*/
+    position: relative;
+
+    /*LO ESCONDEMOS*/
+    transform: translateX(-100%);
+}
+
+/*PARECEMOS EL CONTENIDO MENU*/
+#btn-menu:checked ~ .contenedor-menu .contenido-menu {
+    /*lo APRECEMOS para la animacion del hover*/
+    transform: translateX(0%); /*LO REGRESAMOS*/
+}
+
+
+.contenido-menu nav .menu-item a {
+    display: block; /*para que cubra todo su espacio de su caja*/
+    padding: 10px !important;  /*su relleno*/
+    color: var(--blanco);  /*color de letra*/
+}
+
+.contenido-menu nav .menu-item a:hover{
+    background-color: var(--blanco);
+    color: var(--negro);
+    border-right: 8px solid var(--blanco);
+}
+
+.contenido-menu label {
+    position: absolute;
+    top: 0;
+    right: 5%; /*que se coloque al medio*/
+    font-size: 2.5rem;
+    color: var(--blanco);
+    cursor: pointer;
+}
+
+.contenido-menu label:hover {
+    cursor: pointer;
+    transition: all 700ms ease;
+}
+
+.menu-item .nav-item .dropdown-menu {
+    width: 100%;
+}
+
+.menu-item .nav-item .dropdown-menu a{
+    padding: 10px;
+    color: var(--negro);
+}

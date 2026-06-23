@@ -1,0 +1,219 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Mulish", sans-serif !important;
+    color: #6c7293 !important;
+}
+
+/*ESTILOS PARA EL CHAT BOT PREUNICURSOS*/
+#chat-container {
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: #0d6efd;*/
+    /* Bootstrap primary */
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+}
+
+#chat-log {
+    height: 300px;
+    overflow-y: auto;
+    background-color: var(--general);
+    /* gris claro */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    scroll-behavior: smooth;
+}
+
+/* General style for both messages */
+.message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    text-align: justify;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* User message style */
+.user-message {
+    background-color: #fabb05;
+    /* amarillo tipo Google */
+    color: #000;
+    float: right;
+    clear: both;
+}
+
+/* Bot message style */
+.bot-message {
+    background-color: #d1e7dd;
+    /* verde claro tipo success */
+    color: #0f5132;
+    float: left;
+    clear: both;
+}
+
+/* ESTILOS DE LA PIZARRA */
+.signature-container {
+    width: 100%; /* que siempre ocupe el ancho del contenedor */
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #f07613;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+.signature-pad {
+    width: 100% !important; /* canvas ocupa todo el ancho */
+    height: 550px; /* altura fija en móvil (ajústalo a gusto) */
+    display: block;
+}
+
+.ahorro-suscripcion {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background-color: var(--general);
+    color: white;
+    font-size: 1.5em;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/*para desactivar el boton de descarga de los documentos*/
+/* Estilo cuando el enlace está deshabilitado */
+.disabled-link {
+    pointer-events: none;
+    /* Deshabilita clics */
+    opacity: 0.6;
+    /* Hace el botón más transparente */
+    cursor: not-allowed;
+    /* Cambia el cursor a "no permitido" */
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+/*img{width: 100%; object-fit: cover;}*/
+
+.centrar-div {
+    /*position: absolute;*/
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none !important;
+}
+ul {
+    padding-left: 0px !important;
+    margin: 0px !important;
+}
+p {
+    margin-bottom: 0px !important;
+}
+
+.sombra {
+    box-shadow: 1px 7px 25px 9px rgba(166, 166, 166, 0.75);
+    -webkit-box-shadow: 1px 7px 25px 9px rgba(166, 166, 166, 0.75);
+    -moz-box-shadow: 1px 7px 25px 9px rgba(166, 166, 166, 0.75);
+}
+
+.mi-boton {
+    display: inline-block;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    width: auto;
+    box-shadow: none;
+    border: none;
+    user-select: none;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 300ms ease-in-out 0s;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+}
+
+.azul {
+    background-color: var(--blanco);
+    border: 2px solid var(--azul);
+    color: var(--azul);
+}
+.azul:hover {
+    background: var(--azul);
+    color: var(--blanco);
+}
+
+.verde {
+    background-color: var(--blanco);
+    border: 2px solid var(--verde);
+    color: var(--verde);
+}
+.verde:hover {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+.amarillo {
+    background-color: var(--blanco);
+    border: 2px solid var(--amarillo);
+    color: var(--amarillo);
+}
+.amarillo:hover {
+    background: var(--amarillo);
+    color: var(--blanco);
+}
+
+.rojo {
+    background-color: var(--blanco);
+    border: 2px solid var(--rojo);
+    color: var(--rojo);
+}
+.rojo:hover {
+    background: var(--rojo);
+    color: var(--blanco);
+}
+
+.general {
+    background-color: var(--blanco);
+    border: 2px solid var(--general);
+    color: var(--general);
+}
+.general:hover {
+    background: var(--general);
+    color: var(--blanco);
+}
+
+.fondo-general {
+    background-color: var(--general) !important;
+    color: var(--blanco);
+}
+.color-general {
+    color: var(--general);
+}

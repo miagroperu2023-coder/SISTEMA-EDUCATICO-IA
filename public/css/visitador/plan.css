@@ -1,0 +1,173 @@
+/* ESTILOS POPUPP */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Contenedor para alinear los popups */
+.popup-container {
+    display: flex;
+    flex-direction: column; /* Esto los pone uno debajo del otro */
+    gap: 20px; /* Espacio entre popups */
+    align-items: center; /* Opcional: centrarlos */
+    padding: 20px;
+}
+
+/* Caja del popup */
+.popup {
+    background: #2d2d2d;
+    border: 3px solid var(--general);
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%; /* Para que se adapten */
+    text-align: center;
+    position: relative;
+    animation: bounceIn 0.8s ease;
+    box-shadow: 0px 0px 25px var(--general);
+    z-index: 1001;
+}
+
+
+/* Animación */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Botón cerrar */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 44px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Texto principal */
+.popup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--general);
+    text-shadow: 0px 0px 8px var(--general);
+}
+
+.popup p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Código del cupón */
+.coupon {
+    background: var(--general);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 2px;
+    box-shadow: 0px 0px 12px var(--general);
+}
+
+/* Botón de acción */
+.popup button {
+    margin-top: 20px;
+    background: var(--general);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup button:hover {
+    background: #ff3300;
+}
+
+/* Bruja volando en diagonal */
+.witch {
+    position: fixed;
+    top: -150px;
+    left: -200px;
+    width: 150px;
+    animation: flyWitch 12s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes flyWitch {
+    from {
+        top: -150px;
+        left: -200px;
+    }
+
+    to {
+        top: 100%;
+        left: 120%;
+    }
+}
+
+/* Murciélagos */
+.bat {
+    position: fixed;
+    width: 60px;
+    z-index: 1000;
+    animation: flyBat 7s linear infinite;
+}
+
+.bat:nth-child(1) {
+    top: 20%;
+    left: -60px;
+    animation-delay: 0s;
+}
+
+.bat:nth-child(2) {
+    top: 40%;
+    left: -60px;
+    animation-delay: 2s;
+}
+
+.bat:nth-child(3) {
+    top: 60%;
+    left: -60px;
+    animation-delay: 4s;
+}
+
+@keyframes flyBat {
+    from {
+        left: -80px;
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        left: 110%;
+        transform: scale(1.2) rotate(360deg);
+    }
+}

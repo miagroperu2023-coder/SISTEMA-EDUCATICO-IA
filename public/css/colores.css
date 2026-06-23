@@ -1,0 +1,26 @@
+:root {
+    --blanco : #fff;
+    --negro : #000;
+    --gris : #f6fbff;
+    --general : #1a1f71;
+    --generalTransparente : rgba(78, 19, 240, 0.158);
+
+    --naranja : #1a1f71;
+
+
+    --azul: #3c37f1 ;
+    --verde : #04AA6D;
+    --amarillo: #ff9800;
+    --rojo: #ff5574;
+
+
+    --azul-login: #3c37f1;
+    --rosa: #ff5574;
+    --celeste: #99ccff;
+    --celesteClaro: #accffe;
+
+    /*colores gradiante curso show*/
+    --gradienteUno: #2d28b9; /* azul violeta brillante */
+    --gradienteDos: #0c437a; /* azul vibrante */
+    --gradienteTres: #1a1f71; /* azul profundo */
+}
