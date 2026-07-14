@@ -52,18 +52,18 @@
 
                                             <form action="{{ route('admin.logout') }}" method="POST">
                                                 @csrf
-                                                <input type="submit" class="btn-solid-sm p-4 text-center" value="🚪 Salir">
+                                                <input type="submit" class="btn btn-primary" value="🚪 Salir">
                                             </form>
                                         </div>
                                     @else
                                         <div class="d-flex flex-wrap">
-                                            <a href="{{ route('visitador.plan.show') }}" class="btn-solid-sm p-4 text-center">
+                                            <a href="{{ route('visitador.plan.show') }}" class="btn btn-primary">
                                                 💎 Potenciar mi aprendizaje
                                             </a>
 
                                             <form action="{{ route('admin.logout') }}" method="POST">
                                                 @csrf
-                                                <input type="submit" class="btn-solid-sm p-4 ml-3 text-center" value="🚪 Salir">
+                                                <input type="submit" class="btn btn-primary" value="🚪 Salir">
                                             </form>
                                         </div>
                                     @endcanany

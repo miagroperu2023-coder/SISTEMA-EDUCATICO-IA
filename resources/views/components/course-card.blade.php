@@ -1,85 +1,78 @@
-<div>
-    <div class="" id="contenido-bloques">
-        <div class="contenedor">
-            <div class="row">
-                @foreach ($courses as $course)
-                    <div class="col-md-3 my-2">
-                        <div class="mi-card">
-                            <div class="mi-card-content">
-                                <h2 class="text-dark mb-1 text-center font-weight-bold lead">{{ $course->title }}</h2>
-                                <div class="text-center">
-                                    @if ($url === 'gratis')
-                                        <a href="{{ route('visitador.course.free.show', ['course' => $course]) }}">
-                                            <img class="imagen" src="{{ $course->image->url }}" alt="">
-                                        </a>
-                                    @else
-                                        <a href="{{ route('visitador.course.show', ['course' => $course]) }}">
-                                            <img class="imagen" src="{{ $course->image->url }}" alt="">
-                                        </a>
-                                    @endif
-                                </div>
+<div class="container py-4">
 
-                                {{-- <p class="contenido-bloques-parrafo">{!! Str::limit($course->description, 50) !!}</p> --}}
+    <div class="row g-4">
 
-                                <div class="d-flex justify-content-between align-items-center mt-3 mb-2">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <i class='bx bxs-user-plus' style="font-size: 24px"></i>
-                                        <p>({{ $course->students_count }}0)</p>
-                                    </div>
+        @foreach ($courses as $course)
+            <div class="col-sm-6 col-md-4 col-lg-3">
 
-                                    <ul class="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <p>{{ round($course->rating) }}</p>
-                                        </div>
+                <div class="card h-100 shadow-sm border-0">
 
-                                        <div class="d-flex">
-                                            <li>
-                                                <i style='color:#da920f'
-                                                    class='bx bx-star {{ $course->rating >= 1 ? 'bx bxs-star' : '' }}'></i>
-                                            </li>
-                                            <li>
-                                                <i style='color:#da920f'
-                                                    class='bx bx-star {{ $course->rating >= 2 ? 'bx bxs-star' : '' }}'></i>
-                                            </li>
-                                            <li>
-                                                <i style='color:#da920f'
-                                                    class='bx bx-star {{ $course->rating >= 3 ? 'bx bxs-star' : '' }}'></i>
-                                            </li>
-                                            <li>
-                                                <i style='color:#da920f'
-                                                    class='bx bx-star {{ $course->rating >= 4 ? 'bx bxs-star' : '' }}'></i>
-                                            </li>
-                                            <li>
-                                                <i style='color:#da920f'
-                                                    class='bx bx-star {{ $course->rating == 5 ? 'bx bxs-star' : '' }}'></i>
-                                            </li>
-                                        </div>
-                                    </ul>
-                                </div>
-                                {{-- PARA VALIDAR QUE EL USUARIO ESTE AUTENTICADO Y CON ELLO PODER DIRIGIRLE A SU RESPECTIVA RUTA DE TIPO DE PAGOS --}}
-                                @if (auth()->check())
-                                    @if ($url == 'gratis')
-                                        <a href="{{ route('visitador.course.free.show', ['course' => $course]) }}"
-                                            class="btn-solid-sm p-4 mt-2 w-100 text-center">Detalles</a>
-                                    @else
-                                        <a href="{{ route('visitador.course.show', ['course' => $course]) }}"
-                                            class="btn-solid-sm p-4 mt-2 w-100 text-center">Detalles</a>
-                                    @endif
-                                @else
-                                    @if ($url == 'gratis')
-                                        <a href="{{ route('visitador.course.free.show', ['course' => $course]) }}"
-                                            class="btn-solid-sm p-4 mt-2 w-100  text-center">Detalles</a>
-                                    @else
-                                        <a href="{{ route('visitador.course.show', ['course' => $course]) }}"
-                                            class="btn-solid-sm p-4 mt-2 w-100  text-center">Detalles</a>
-                                    @endif
-                                @endif
+                    {{-- Imagen --}}
+                    @if ($url == 'gratis')
+                        <a href="{{ route('visitador.course.free.show', $course) }}">
+                            <img src="{{ $course->image->url }}" class="card-img-top"
+                                style="height:220px; object-fit:cover;" alt="{{ $course->title }}">
+                        </a>
+                    @else
+                        <a href="{{ route('visitador.course.show', $course) }}">
+                            <img src="{{ $course->image->url }}" class="card-img-top"
+                                style="height:220px; object-fit:cover;" alt="{{ $course->title }}">
+                        </a>
+                    @endif
 
-                            </div>
+                    <div class="card-body d-flex flex-column">
+
+                        <h5 class="card-title fw-bold text-center">
+                            {{ $course->title }}
+                        </h5>
+
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+
+                            <small class="text-muted">
+                                <i class='bx bxs-user-plus'></i>
+                                {{ $course->students_count }} estudiantes
+                            </small>
+
+                            <span class="badge bg-warning text-dark">
+                                ⭐ {{ number_format($course->rating, 1) }}
+                            </span>
+
                         </div>
+
+                        <div class="text-warning text-center my-3">
+
+                            @for ($i = 1; $i <= 5; $i++)
+                                <i class='bx {{ $course->rating >= $i ? 'bxs-star' : 'bx-star' }}'></i>
+                            @endfor
+
+                        </div>
+
+                        <div class="mt-auto">
+
+                            @if ($url == 'gratis')
+                                <a href="{{ route('visitador.course.free.show', $course) }}"
+                                    class="btn btn-primary w-100">
+
+                                    Ver curso
+
+                                </a>
+                            @else
+                                <a href="{{ route('visitador.course.show', $course) }}" class="btn btn-primary w-100">
+
+                                    Ver curso
+
+                                </a>
+                            @endif
+
+                        </div>
+
                     </div>
-                @endforeach
+
+                </div>
+
             </div>
-        </div>
+        @endforeach
+
     </div>
+
 </div>

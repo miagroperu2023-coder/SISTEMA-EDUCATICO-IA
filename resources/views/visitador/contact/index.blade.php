@@ -41,7 +41,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
-                                        <button disabled class="btn-solid-sm">Enviar</button>
+                                        <button disabled class="btn btn-primary">Enviar</button>
                                     </div>
                                 </div>
                             </form>

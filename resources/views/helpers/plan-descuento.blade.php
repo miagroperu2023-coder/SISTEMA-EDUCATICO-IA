@@ -41,7 +41,7 @@
                     </p>
 
                     <input type="submit"
-                        class="btn-solid-sm p-4 mt-3 w-100 text-white bg-red-500 hover:bg-green-600 transition-all rounded-lg shadow"
+                        class="btn btn-primary p-2 mt-3 w-100 text-white bg-red-500 hover:bg-green-600 transition-all rounded-lg shadow"
                         value="🎅 S/ {{ $precioDescuento }} ({{ strtoupper($plan->promo_code) }}) 🎄">
                 </div>
             </form>

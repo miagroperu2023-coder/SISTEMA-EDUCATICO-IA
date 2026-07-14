@@ -105,7 +105,7 @@
                          @else
                              <form action="{{ route('mercadopago.suscription.index') }}" id="form-suscription" method="POST">
                                  @csrf
-                                 <input type="submit" class="btn-solid-sm p-4 text-center mt-3 w-100"
+                                 <input type="submit" class="btn btn-primary p-4 text-center mt-3 w-100"
                                      value="Quiero estudiar ya">
                              </form>
                          @endcanany
@@ -113,7 +113,7 @@
 
                      @guest
                          <a href="{{ route('admin.register.index') }}"
-                             class="btn-solid-sm p-4 text-center mt-3 w-100">Impulsar mi aprendizaje</a>
+                             class="btn btn-primary p-4 text-center mt-3 w-100">Impulsar mi aprendizaje</a>
                      @endguest
                  </div>
              </div>
@@ -219,7 +219,7 @@
                              <form action="{{ route('mercadopago.suscription.six.index') }}" id="form-suscription-seis-meses"
                                  method="POST">
                                  @csrf
-                                 <input type="submit" class="btn-solid-sm p-4 text-center mt-3 w-100"
+                                 <input type="submit" class="btn btn-primary p-4 text-center mt-3 w-100"
                                      value="Quiero estudiar ya">
                              </form>
                          @endcanany
@@ -228,7 +228,7 @@
 
                      @guest
                          <a href="{{ route('admin.register.index') }}"
-                             class="btn-solid-sm p-4 text-center mt-3 w-100">Impulsar mi aprendizaje</a>
+                             class="btn btn-primary p-4 text-center mt-3 w-100">Impulsar mi aprendizaje</a>
                      @endguest
                  </div>
              </div>
@@ -333,7 +333,7 @@
                              <form action="{{ route('mercadopago.suscription.year.index') }}" id="form-suscription-doce-meses"
                                  method="POST">
                                  @csrf
-                                 <input type="submit" class="btn-solid-sm p-4 text-center mt-3 w-100"
+                                 <input type="submit" class="btn btn-primary p-4 text-center mt-3 w-100"
                                      value="Quiero estudiar ya">
                              </form>
                          @endcanany
@@ -342,7 +342,7 @@
 
                      @guest
                          <a href="{{ route('admin.register.index') }}"
-                             class="btn-solid-sm p-4 text-center mt-3 w-100">Impulsar mi aprendizaje</a>
+                             class="btn btn-primary p-4 text-center mt-3 w-100">Impulsar mi aprendizaje</a>
                      @endguest
                  </div>
              </div>
