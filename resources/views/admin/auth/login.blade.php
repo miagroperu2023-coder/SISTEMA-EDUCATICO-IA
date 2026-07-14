@@ -10,16 +10,16 @@
 
     <body class="vh-100 bg-white">
 
-        <div class="container-fluid h-100">
+        <div class="container-fluid vh-100">
             <div class="row h-100">
 
                 <!-- IZQUIERDA -->
-                <div class="col-lg-5 d-flex align-items-center justify-content-center">
+                <div class="col-lg-4 d-flex align-items-center justify-content-center">
 
-                    <div class="w-75">
+                    <div style="width:85%; max-width:420px;">
 
                         <!-- Logo -->
-                        <div class="mb-4 mt-3">
+                        <div class="mb-4">
                             <img src="{{ asset('img/logo/logo.png') }}" width="150" alt="Logo">
                         </div>
 
@@ -28,7 +28,7 @@
                         </h3>
 
                         <p class="text-muted mb-4">
-                            Accede a la plataforma
+                            Accede a la plataforma para continuar aprendiendo.
                         </p>
 
                         {{-- Error --}}
@@ -42,24 +42,26 @@
 
                             @csrf
 
-                            <!-- Email -->
+                            <!-- Correo -->
                             <div class="mb-3">
+
                                 <label class="form-label">
                                     Correo electrónico
                                 </label>
 
                                 <input type="email" name="email" value="{{ old('email') }}"
                                     class="form-control @error('email') is-invalid @enderror"
-                                    placeholder="ejemplo@correo.com">
+                                    placeholder="ejemplo@gmail.com">
 
                                 @error('email')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                 @enderror
+
                             </div>
 
-                            <!-- Password -->
+                            <!-- Contraseña -->
                             <div class="mb-3">
 
                                 <label class="form-label">
@@ -81,14 +83,16 @@
                             <div class="d-flex justify-content-between align-items-center mb-4">
 
                                 <div class="form-check">
+
                                     <input class="form-check-input" type="checkbox" id="remember" name="remember">
 
                                     <label class="form-check-label" for="remember">
                                         Recordarme
                                     </label>
+
                                 </div>
 
-                                <a href="{{ route('admin.recover') }}">
+                                <a href="{{ route('admin.recover') }}" class="text-decoration-none">
                                     ¿Olvidaste tu contraseña?
                                 </a>
 
@@ -116,8 +120,7 @@
 
                         </div>
 
-                        <!-- Botones inferiores -->
-
+                        <!-- Botones -->
                         <div class="row mt-4">
 
                             <div class="col-6 d-grid">
@@ -147,16 +150,10 @@
                 </div>
 
                 <!-- DERECHA -->
+                <div class="col-lg-8 d-none d-lg-block p-0">
 
-                <div class="col-lg-7 d-none d-lg-block p-0">
-
-                    <div class="h-100 w-100"
-                        style="
-                        background-image:url('{{ asset('img/home/header.jpg') }}');
-                        background-size:cover;
-                        background-position:center;
-                    ">
-                    </div>
+                    <img src="{{ asset('img/home/header.jpg') }}" class="w-100 h-100" style="object-fit: cover;"
+                        alt="EduPeruApp">
 
                 </div>
 

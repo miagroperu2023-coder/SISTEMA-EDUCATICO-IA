@@ -10,16 +10,16 @@
 
     <body class="vh-100 bg-white">
 
-        <div class="container-fluid h-100">
+        <div class="container-fluid vh-100">
             <div class="row h-100">
 
                 <!-- IZQUIERDA -->
-                <div class="col-lg-5 d-flex align-items-center justify-content-center">
+                <div class="col-lg-4 d-flex align-items-center justify-content-center">
 
-                    <div class="w-75">
+                    <div style="width:85%; max-width:420px;">
 
                         <!-- Logo -->
-                        <div class="mb-4 mt-3">
+                        <div class="mb-4">
                             <img src="{{ asset('img/logo/logo.png') }}" width="150" alt="Logo">
                         </div>
 
@@ -31,7 +31,6 @@
                             Regístrate para comenzar a utilizar la plataforma.
                         </p>
 
-                        {{-- Error --}}
                         @if (session('mensaje'))
                             <div class="alert alert-danger">
                                 {{ session('mensaje') }}
@@ -44,89 +43,61 @@
 
                             <!-- Nombre -->
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Nombre completo
-                                </label>
+                                <label class="form-label">Nombre completo</label>
 
                                 <input type="text" id="name" name="name" value="{{ old('name') }}"
                                     class="form-control @error('name') is-invalid @enderror" placeholder="Tu nombre">
 
                                 @error('name')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-
                             </div>
 
                             <!-- Email -->
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Correo electrónico
-                                </label>
+                                <label class="form-label">Correo electrónico</label>
 
                                 <input type="email" id="email" name="email" value="{{ old('email') }}"
                                     class="form-control @error('email') is-invalid @enderror"
                                     placeholder="ejemplo@gmail.com">
 
                                 @error('email')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-
                             </div>
 
                             <!-- Contraseña -->
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Contraseña
-                                </label>
+                                <label class="form-label">Contraseña</label>
 
                                 <input type="password" id="password" name="password"
                                     class="form-control @error('password') is-invalid @enderror" placeholder="********">
 
                                 @error('password')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-
                             </div>
 
                             <!-- Confirmar -->
                             <div class="mb-4">
-
-                                <label class="form-label">
-                                    Confirmar contraseña
-                                </label>
+                                <label class="form-label">Confirmar contraseña</label>
 
                                 <input type="password" id="password_confirmation" name="password_confirmation"
                                     class="form-control @error('password_confirmation') is-invalid @enderror"
                                     placeholder="********">
 
                                 @error('password_confirmation')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-
                             </div>
 
-                            <!-- Botón -->
                             <button class="btn btn-primary w-100 py-2" id="btn-register">
-
                                 Registrarme
-
                             </button>
 
                         </form>
 
                         <!-- Google -->
-
                         <div class="mt-3">
 
                             <a href="{{ route('google.auth.redirect') }}"
@@ -141,28 +112,19 @@
 
                         </div>
 
-                        <!-- Botones inferiores -->
-
+                        <!-- Botones -->
                         <div class="row mt-4">
 
                             <div class="col-6 d-grid">
-
                                 <a href="{{ route('login') }}" class="btn btn-outline-primary">
-
                                     Ingresar
-
                                 </a>
-
                             </div>
 
                             <div class="col-6 d-grid">
-
                                 <a href="{{ route('visitador.home.index') }}" class="btn btn-outline-dark">
-
                                     Inicio
-
                                 </a>
-
                             </div>
 
                         </div>
@@ -172,16 +134,10 @@
                 </div>
 
                 <!-- DERECHA -->
+                <div class="col-lg-8 d-none d-lg-block p-0">
 
-                <div class="col-lg-7 d-none d-lg-block p-0">
-
-                    <div class="h-100 w-100"
-                        style="
-                        background-image:url('{{ asset('img/home/header.jpg') }}');
-                        background-size:cover;
-                        background-position:center;
-                    ">
-                    </div>
+                    <img src="{{ asset('img/home/header.jpg') }}" class="w-100 h-100" style="object-fit:cover;"
+                        alt="Imagen">
 
                 </div>
 
