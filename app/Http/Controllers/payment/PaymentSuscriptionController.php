@@ -93,7 +93,7 @@ class PaymentSuscriptionController extends Controller
             $pay = Pay::create([
                 'user_id' => auth()->user()->id,
                 'collection_id' => $request->collection_id ?? '',
-                'collection_status' => 'PLAN-PRE-UNI',
+                'collection_status' => 'PLAN-UN-MES',
                 'payment_id' => $request->payment_id ?? '',
                 'status' => 'PAGO SUSCRIPCION',
                 'external_reference' =>  $request->external_reference ?? '',
