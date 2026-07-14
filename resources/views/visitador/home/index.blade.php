@@ -19,31 +19,24 @@
                     <div class="row align-items-center">
                         <div class="col-lg-12" data-aos="fade-up">
 
-                            <h1 class="fw-bold text-white mb-3 mt-5" style="font-size: 35px !important">
-                                🎓 El acompañamiento escolar que ayuda a mejorar el rendimiento académico
+                            <h1 class="fw-bold text-white mb-3 mt-5" style="font-size: 40px !important">
+                                🚀 Potencia tu aprendizaje con Inteligencia Artificial.
                             </h1>
 
-                            <p class="lead mb-3 text-white" style="text-align: justify;">
-                                <strong class="text-warning">EduPeruApp</strong> es una plataforma de acompañamiento
-                                escolar diseñada para ayudar a los estudiantes a reforzar conocimientos, superar
-                                dificultades y avanzar con mayor confianza en sus estudios.
-                            </p>
-
-                            <p class="text-white mb-4" style="text-align: justify;">
-                                Accede a lecciones organizadas por temas, ejercicios de refuerzo, evaluaciones,
-                                simulacros personalizados y asistencia académica con <span class="text-info">Inteligencia
-                                    Artificial</span> para fortalecer lo aprendido en
-                                clase y potenciar tu progreso académico.
+                            <p class="lead text-white mb-4">
+                                <strong class="text-warning">EduPeruApp</strong> combina cursos, ejercicios, simulacros e
+                                Inteligencia Artificial para ayudar a estudiantes de colegios públicos a aprender mejor y
+                                mejorar su rendimiento académico.
                             </p>
 
                             <div class="d-flex flex-wrap mt-4">
 
                                 @guest
-                                    <a href="{{ route('admin.register.index') }}" class="btn-solid-sm p-4 text-center mt-1">
+                                    <a href="{{ route('admin.register.index') }}" class="btn btn-primary mt-1">
                                         🚀 Comenzar a aprender
                                     </a>
 
-                                    <a href="#plans" class="ml-4 btn-solid-sm p-4 text-center mt-1">
+                                    <a href="#plans" class="ml-4 btn btn-primary mt-1">
                                         📖 Nuestros Planes
                                     </a>
                                 @endguest

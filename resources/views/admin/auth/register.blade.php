@@ -1,85 +1,194 @@
 @extends('layouts.app')
 
+@section('bosstrap.css')
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+@endsection
 
 @section('main')
-    <section class="vh-100">
-        <div class="wrapper">
-            <div class="inner">
-                <img src="{{ asset('img/login/image-1.png') }}" alt="" class="image-1">
-                <form class="form" id="formRegister" action="{{ route('admin.register.store') }}" method="POST">
 
-                    {{-- token de seguridad --}}
-                    @csrf
+    <body class="vh-100 bg-white">
 
-                    {{-- MENSAJE SI ESTAN MAL LAS CREDENCIALES --}}
-                    @if (session('mensaje'))
-                        <div class="alert alert-danger" role="alert">
-                            {{ session('mensaje') }}
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+
+                <!-- IZQUIERDA -->
+                <div class="col-lg-5 d-flex align-items-center justify-content-center">
+
+                    <div class="w-75">
+
+                        <!-- Logo -->
+                        <div class="mb-4 mt-3">
+                            <img src="{{ asset('img/logo/logo.png') }}" width="150" alt="Logo">
                         </div>
-                    @endif
-                    <div class="d-flex justify-content-between mb-3">
-                        <div> <a class="btn-solid-sm" href="{{ route('login') }}">Ingresar</a></div>
-                        <div> <a class="btn-solid-sm" href="{{ route('visitador.home.index') }}">Casa</a></div>
-                    </div>
 
-                    <div class="form-holder">
-                        <span><i class='bx bx-user-check'></i></span>
-                        <input type="text" id="name" name="name" class="form-control-login"
-                            value="{{ old('name') }}" placeholder="Tu nombre o nombre de usuario" />
-                    </div>
-                    @error('name')
-                        <p class="text-danger">{{ $message }}</p>
-                    @enderror
+                        <h3 class="fw-bold mb-2">
+                            Crea tu cuenta
+                        </h3>
 
-                    <div class="form-holder">
-                        <span><i class='bx bx-envelope'></i></i></span>
-                        <input type="email" name="email" value="{{ old('email') }}" id="email"
-                            class="form-control-login" placeholder="Tu Gmail" />
-                    </div>
-                    @error('email')
-                        <p class="text-danger">{{ $message }}</p>
-                    @enderror
+                        <p class="text-muted mb-4">
+                            Regístrate para comenzar a utilizar la plataforma.
+                        </p>
 
-                    <div class="form-holder">
-                        <span><i class='bx bx-barcode'></i></span>
-                        <input type="password" id="password" name="password" class="form-control-login"
-                            placeholder="contraseña" />
-                    </div>
-                    @error('password')
-                        <p class="text-danger">{{ $message }}</p>
-                    @enderror
+                        {{-- Error --}}
+                        @if (session('mensaje'))
+                            <div class="alert alert-danger">
+                                {{ session('mensaje') }}
+                            </div>
+                        @endif
 
-                    <div class="form-holder">
-                        <span><i class='bx bx-barcode'></i></span>
-                        <input type="password" id="password_confirmation" name="password_confirmation"
-                            class="form-control-login" placeholder="repetir contraseña" />
-                    </div>
-                    @error('password_confirmation')
-                        {{-- alerta de error --}}
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
+                        <form id="formRegister" action="{{ route('admin.register.store') }}" method="POST">
 
-                    <button class="button-login button-login-blue" id="btn-register">
-                        <span>Registrarme</span>
-                    </button>
+                            @csrf
 
-                    <div class="d-flex justify-content-center text-center mx-auto my-3">
-                        <!-- Botón de Google -->
-                        <div class="text-center">
-                            <a href="{{ route('google.auth.redirect') }}">
-                                <img src="https://cdn-icons-png.flaticon.com/64/5968/5968534.png" alt="Gmail">
+                            <!-- Nombre -->
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Nombre completo
+                                </label>
+
+                                <input type="text" id="name" name="name" value="{{ old('name') }}"
+                                    class="form-control @error('name') is-invalid @enderror" placeholder="Tu nombre">
+
+                                @error('name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Correo electrónico
+                                </label>
+
+                                <input type="email" id="email" name="email" value="{{ old('email') }}"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    placeholder="ejemplo@gmail.com">
+
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+
+                            </div>
+
+                            <!-- Contraseña -->
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Contraseña
+                                </label>
+
+                                <input type="password" id="password" name="password"
+                                    class="form-control @error('password') is-invalid @enderror" placeholder="********">
+
+                                @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+
+                            </div>
+
+                            <!-- Confirmar -->
+                            <div class="mb-4">
+
+                                <label class="form-label">
+                                    Confirmar contraseña
+                                </label>
+
+                                <input type="password" id="password_confirmation" name="password_confirmation"
+                                    class="form-control @error('password_confirmation') is-invalid @enderror"
+                                    placeholder="********">
+
+                                @error('password_confirmation')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+
+                            </div>
+
+                            <!-- Botón -->
+                            <button class="btn btn-primary w-100 py-2" id="btn-register">
+
+                                Registrarme
+
+                            </button>
+
+                        </form>
+
+                        <!-- Google -->
+
+                        <div class="mt-3">
+
+                            <a href="{{ route('google.auth.redirect') }}"
+                                class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center">
+
+                                <img src="https://cdn-icons-png.flaticon.com/64/5968/5968534.png" width="22"
+                                    class="me-2">
+
+                                Registrarme con Google
+
                             </a>
-                            <a class="mt-1 d-block fw-bold text-dark" href="{{ route('google.auth.redirect') }}">Iniciar
-                                con Gmail</a>
+
                         </div>
+
+                        <!-- Botones inferiores -->
+
+                        <div class="row mt-4">
+
+                            <div class="col-6 d-grid">
+
+                                <a href="{{ route('login') }}" class="btn btn-outline-primary">
+
+                                    Ingresar
+
+                                </a>
+
+                            </div>
+
+                            <div class="col-6 d-grid">
+
+                                <a href="{{ route('visitador.home.index') }}" class="btn btn-outline-dark">
+
+                                    Inicio
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
-                </form>
-                <img src="{{ asset('img/login/image-2.png') }}" alt="" class="image-2">
-            </div>
+                </div>
 
+                <!-- DERECHA -->
+
+                <div class="col-lg-7 d-none d-lg-block p-0">
+
+                    <div class="h-100 w-100"
+                        style="
+                        background-image:url('{{ asset('img/home/header.jpg') }}');
+                        background-size:cover;
+                        background-position:center;
+                    ">
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-    </section>
+
+    </body>
 
     <!-- Agrega esto al final de tu página antes de cerrar el cuerpo -->
     <!-- ... Código HTML anterior ... -->
@@ -141,6 +250,10 @@
     </script>
 
 
-
-    <!-- ... Código HTML posterior ... -->
+@section('bosstrap.js')
+    <!-- CDN JS BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+@endsection
 @endsection

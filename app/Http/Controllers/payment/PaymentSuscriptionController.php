@@ -36,7 +36,7 @@ class PaymentSuscriptionController extends Controller
         $count = 1;
         while ($count <= 1) {
             $item = new Item();
-            $item->title = 'PLAN-PRE-UNI';
+            $item->title = 'PLAN-UN-MES';
             $item->description = 'Pago suscripción EduPeruApp 1 mes';
             $item->quantity = $count;
             $item->unit_price = config('mercadopago.plan_mensual'); //179.88

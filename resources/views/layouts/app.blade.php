@@ -124,7 +124,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400&display=swap" rel="stylesheet">
 
-    <link href="{{ asset('css/login/login.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/login/login.css') }}" rel="stylesheet"> --}}
     <!-- Plyr CSS -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
 
