@@ -55,7 +55,6 @@ class HomeController extends Controller
 
     public function panel()
     {
-        $this->middleware('auth');
 
         $user =  auth()->user();
         $courses = Course::all();

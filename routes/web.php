@@ -46,7 +46,7 @@ use App\Http\Livewire\CourseStatus;
 
 Route::get('/', [HomeController::class, 'index'])->name('visitador.home.index');
 Route::get('/contenido/{resource}', [HomeController::class, 'contenido'])->name('visitador.contenido');
-Route::get('/panel', [HomeController::class, 'panel'])->name('visitador.panel');
+Route::get('/panel', [HomeController::class, 'panel'])->name('visitador.panel')->middleware('auth');
 
 //AUTH CON GOOGLE 
 Route::get('/auth/google', [SocialAuthController::class, 'redirectToGoogle'])->name('google.auth.redirect');
