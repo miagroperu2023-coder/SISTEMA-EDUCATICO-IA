@@ -30,7 +30,7 @@
 
                             <small class="text-muted">
                                 <i class='bx bxs-user-plus'></i>
-                                {{ $course->students_count }} estudiantes
+                                {{ $course->students_count }}00 estudiantes
                             </small>
 
                             <span class="badge bg-warning text-dark">
