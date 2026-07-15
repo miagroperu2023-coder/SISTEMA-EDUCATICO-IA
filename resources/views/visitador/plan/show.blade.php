@@ -17,6 +17,7 @@
 
 
 @section('main')
+    {{--
     <section class="" id="contenido-bloques">
         <div class="contenedor">
 
@@ -28,6 +29,7 @@
 
         </div>
     </section>
+    --}}
 
     <!-- Ahora incluimos la vista suscripcion.blade.php -->
     @include('helpers.suscripcion')
