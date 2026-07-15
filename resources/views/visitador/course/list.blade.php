@@ -23,18 +23,28 @@
             <div class="container">
                 <div class="row">
                     @foreach ($courseUsers as $course)
-                        <div class="col-md-3 mb-3">
-                            <div class="mi-card">
-                                <div class="mi-card-content">
-                                    <div class="text-center">
-                                        <a href="{{ route('visitador.course.show', ['course' => $course]) }}">
-                                            <img class="imagen" src="{{ $course->image->url }}" alt="">
-                                        </a>
-                                    </div>
-                                    <h4 class="contenido-bloques-titulo">{{ $course->title }}</h4>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                            <div class="card h-100 shadow-sm border-0">
+
+                                <a href="{{ route('visitador.course.show', $course) }}">
+                                    <img src="{{ $course->image->url }}" class="card-img-top"
+                                        style="height:220px; object-fit:cover;" alt="{{ $course->title }}">
+                                </a>
+
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title fw-bold text-center mb-4">
+                                        {{ $course->title }}
+                                    </h5>
+
                                     @can('enrolled', $course)
-                                        <a href="{{ route('visitador.course.status', ['course' => $course]) }}"
-                                            class="btn btn-primary w-100">Continuar con el curso</a>
+                                        <div class="mt-auto">
+                                            <a href="{{ route('visitador.course.status', $course) }}"
+                                                class="btn btn-primary w-100">
+                                                <i class='bx bx-play-circle me-1'></i>
+                                                Continuar curso
+
+                                            </a>
+                                        </div>
                                     @endcan
                                 </div>
                             </div>
