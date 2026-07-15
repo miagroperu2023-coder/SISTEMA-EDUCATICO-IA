@@ -122,16 +122,17 @@
              {{-- PLAN SEIS MESES --}}
              <div class="col-sm-4">
                  <div class="pricing-box selected" id="curso-show">
+                    {{-- <div class="cube"></div>
                      <div class="cube"></div>
                      <div class="cube"></div>
                      <div class="cube"></div>
                      <div class="cube"></div>
                      <div class="cube"></div>
-                     <div class="cube"></div>
+                     --}}
                      <img src="https://cdn-icons-png.flaticon.com/512/1921/1921604.png"
                          style="width: 80px;height: 80px;" alt="starter">
                      <span class="ahorro-suscripcion">
-                         💰 Ahorra S/ 30
+                         💰 Ahorra un 50%
                      </span>
                      <h6 class="font-weight-medium title-text text-white">Plan Semestral</h6>
                      <h1 class="text-amount mb-4 mt-2 text-white">
@@ -236,16 +237,17 @@
              {{-- PLAN 12 MESES --}}
              <div class="col-sm-4">
                  <div class="pricing-box selected" id="curso-show">
+                    {{-- <div class="cube"></div>
                      <div class="cube"></div>
                      <div class="cube"></div>
                      <div class="cube"></div>
                      <div class="cube"></div>
                      <div class="cube"></div>
-                     <div class="cube"></div>
+                     --}}
                      <img src="https://cdn-icons-png.flaticon.com/512/6807/6807175.png"
                          style="width: 80px;height: 80px;" alt="starter">
                      <span class="ahorro-suscripcion">
-                         💰 Ahorra S/ 60
+                         🔥 Ahorra un 55%
                      </span>
                      <h6 class="font-weight-medium title-text text-white">Plan Anual</h6>
                      <h1 class="text-amount mb-4 mt-2 text-white">
